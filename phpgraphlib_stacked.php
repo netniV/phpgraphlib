@@ -6,8 +6,8 @@ PHPGraphLib Graphing Library
 The first version PHPGraphLib was written in 2007 by Elliott Brueggeman to
 deliver PHP generated graphs quickly and easily. It has grown in both features
 and maturity since its inception, but remains PHP 4.04+ compatible. Originally
-available only for paid commerial use, PHPGraphLib was open-sourced in 2013 
-under the MIT License. Please visit http://www.ebrueggeman.com/phpgraphlib 
+available only for paid commerial use, PHPGraphLib was open-sourced in 2013
+under the MIT License. Please visit http://www.ebrueggeman.com/phpgraphlib
 for more information.
 
 ---
@@ -35,10 +35,10 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
 
 */
-class PHPGraphLibStacked extends PHPGraphLib 
+class PHPGraphLibStacked extends PHPGraphLib
 {
 
-	protected function generateBars() 
+	protected function generateBars()
 	{
 		$this->finalizeColors();
 		$barCount = 0;
@@ -61,7 +61,7 @@ class PHPGraphLibStacked extends PHPGraphLib
 				$hideBarOutline = false;
 				$x1 = round($xStart);
 				$x2 = round($xStart + $this->bar_width);
-				
+
 				if ($data_set_num > 0) {
 					//find last set valid value for this dataset incase prior values were not set
 					$found = false;
@@ -90,7 +90,7 @@ class PHPGraphLibStacked extends PHPGraphLib
 						$hideBarOutline = true;
 					} elseif ($item >= $this->data_range_max) {
 						//display, but cut off display above range max
-						$y1 = $this->x_axis_y1 - ($this->actual_displayed_max_value * $this->unit_scale) + $adjustment;	
+						$y1 = $this->x_axis_y1 - ($this->actual_displayed_max_value * $this->unit_scale) + $adjustment;
 					}
 				}
 				//draw bar and outline if nonzero
@@ -102,7 +102,7 @@ class PHPGraphLibStacked extends PHPGraphLib
 					}
 					//draw bar outline
 					if ($this->bool_bar_outline && !$hideBarOutline) {
-						imagerectangle($this->image,  $x1, $y1, $x2, $y2, $this->outline_color); 
+						imagerectangle($this->image,  $x1, $y1, $x2, $y2, $this->outline_color);
 					}
 				}
 				// display data values
@@ -133,7 +133,7 @@ class PHPGraphLibStacked extends PHPGraphLib
 					$dataX -= ($this->data_additional_length * self::DATA_VALUE_TEXT_WIDTH) / 2;
 					imagestring($this->image, 2, $dataX, $dataY, $item,  $this->data_value_color);
 				}
-				//write x axis value 
+				//write x axis value
 				if ($this->bool_x_axis_values) {
 					if ($data_set_num == $this->data_set_count - 1) {
 						if ($this->bool_x_axis_values_vert) {
@@ -181,33 +181,33 @@ class PHPGraphLibStacked extends PHPGraphLib
 				$key_max[$key] = isset($key_max[$key]) ? $key_max[$key] + $item : $item;
 
 				if ($key_max[$key] < $this->data_min) {
-					$this->data_min = $key_max[$key]; 
+					$this->data_min = $key_max[$key];
 				}
 
 				if ($key_max[$key] > $this->data_max) {
-					$this->data_max = $key_max[$key]; 
+					$this->data_max = $key_max[$key];
 				}
 			}
 		}
 	}
 
-	public function setLine($bool) 
-	{ 
-		$this->error[] = __function__ . '() function not allowed in PHPGraphLib Stacked extension.'; 
+	public function setLine($bool)
+	{
+		$this->error[] = __function__ . '() function not allowed in PHPGraphLib Stacked extension.';
 	}
 
-	public function setDataPointSize($bool) 
-	{ 
-		$this->error[] = __function__ . '() function not allowed in PHPGraphLib Stacked extension.'; 
+	public function setDataPointSize($bool)
+	{
+		$this->error[] = __function__ . '() function not allowed in PHPGraphLib Stacked extension.';
 	}
 
-	public function setDataPoints($bool) 
-	{ 
-		$this->error[] = __function__ . '() function not allowed in PHPGraphLib Stacked extension.'; 
+	public function setDataPoints($bool)
+	{
+		$this->error[] = __function__ . '() function not allowed in PHPGraphLib Stacked extension.';
 	}
 
-	public function setDataValues($bool) 
-	{ 
-		$this->error[] = __function__ . '() function not allowed in PHPGraphLib Stacked extension.'; 
+	public function setDataValues($bool)
+	{
+		$this->error[] = __function__ . '() function not allowed in PHPGraphLib Stacked extension.';
 	}
 }

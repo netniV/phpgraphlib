@@ -4,8 +4,8 @@ PHPGraphLib Graphing Library
 The first version PHPGraphLib was written in 2007 by Elliott Brueggeman to
 deliver PHP generated graphs quickly and easily. It has grown in both features
 and maturity since its inception, but remains PHP 4.04+ compatible. Originally
-available only for paid commerial use, PHPGraphLib was open-sourced in 2013 
-under the MIT License. Please visit http://www.ebrueggeman.com/phpgraphlib 
+available only for paid commerial use, PHPGraphLib was open-sourced in 2013
+under the MIT License. Please visit http://www.ebrueggeman.com/phpgraphlib
 for more information.
 
 ---
